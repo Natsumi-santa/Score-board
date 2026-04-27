@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+body {
+  background-color: #0a0a0c;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.glass-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+.bento-stat {
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.status-Qualified {
+  color: #00ffa3;
+  text-shadow: 0 0 10px rgba(0,255,163,0.5);
+  border: 1px solid rgba(0,255,163,0.3);
+}
+
+.status-Contender {
+  color: #ffea00;
+  text-shadow: 0 0 10px rgba(255,234,0,0.5);
+  border: 1px solid rgba(255,234,0,0.3);
+}
+
+.status-Eliminated {
+  color: #ff4b4b;
+  text-shadow: 0 0 10px rgba(255,75,75,0.5);
+  border: 1px solid rgba(255,75,75,0.3);
+}
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(0,255,163,0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(0,255,163,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,255,163,0); }
+}
+
+.qualified-row {
+  animation: pulse-green 3s infinite;
+  border-left: 4px solid #00ffa3;
+}
+
+.contender-row {
+  border-left: 4px solid #ffea00;
+  background: rgba(255,255,255,0.02);
+}
+
+.eliminated-row {
+  border-left: 4px solid #ff4b4b;
+  opacity: 0.6;
+}
